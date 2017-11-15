@@ -35,17 +35,6 @@ export class DatabaseService {
     }
 
 
-<<<<<<< HEAD
-    // public getKeys() {
-
-    //    const keyArray = [];
-    //    this.firebase.database().ref("BlogCollection").on("child_added", snapshot => {
-    //        keyArray.push(snapshot.key);
-    //    });
-
-    //    return keyArray;
-    // }
-=======
     public getKeys() {
      
         const keyArray = [];
@@ -65,7 +54,6 @@ export class DatabaseService {
             }));
         });
     }
->>>>>>> 762a10031229efaf3d50f3ba93170897327e11d3
 
 
 
