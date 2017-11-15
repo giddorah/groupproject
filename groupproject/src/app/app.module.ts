@@ -12,29 +12,34 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule, Routes } from '@angular/router';
 
 
+// Forms
+import { ReactiveFormsModule } from "@angular/forms";
+import { BlogformComponent } from './components/blogform/blogform.component';
+
 
 // Our routes
 const appRoutes = [
-  { path: '', component: HomeComponent},
-  { path: 'admin', component: AdminComponent}
+    { path: '', component: HomeComponent },
+    { path: 'admin', component: AdminComponent }
 
 ];
 
 
-
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavbarComponent,
-    HomeComponent,
-    AdminComponent
-  ],
-  imports: [
-    NgbModule.forRoot(),
-    RouterModule.forRoot(appRoutes),
-    BrowserModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        NavbarComponent,
+        HomeComponent,
+        AdminComponent,
+        BlogformComponent
+    ],
+    imports: [
+        NgbModule.forRoot(),
+        RouterModule.forRoot(appRoutes),
+        BrowserModule,
+        ReactiveFormsModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
