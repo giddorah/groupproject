@@ -35,7 +35,7 @@ export class DatabaseService {
     }
 
 
-<<<<<<< HEAD
+
     // public getKeys() {
 
     //    const keyArray = [];
@@ -45,7 +45,7 @@ export class DatabaseService {
 
     //    return keyArray;
     // }
-=======
+
     public getKeys() {
      
         const keyArray = [];
@@ -65,7 +65,6 @@ export class DatabaseService {
             }));
         });
     }
->>>>>>> 762a10031229efaf3d50f3ba93170897327e11d3
 
 
 
