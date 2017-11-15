@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { AdminComponent } from './components/admin/admin.component';
+
 import { environment } from './../environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -24,6 +25,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BlogformComponent } from './components/blogform/blogform.component';
 
 import {  DatabaseService} from './services/database.service';
+import { FooterComponent } from './components/footer/footer.component';
+import { BlogpostComponent } from './components/blogpost/blogpost.component';
 // Our routes
 const appRoutes = [
     { path: '', component: HomeComponent },
@@ -39,7 +42,9 @@ const appRoutes = [
         NavbarComponent,
         HomeComponent,
         AdminComponent,
-        BlogformComponent
+        BlogformComponent,
+        FooterComponent,
+        BlogpostComponent
     ],
     imports: [
         NgbModule.forRoot(),
