@@ -2,22 +2,29 @@ import { Component, OnInit } from '@angular/core';
 import { DatabaseService } from './../../services/database.service';
 import { Observable } from 'rxjs/Observable';
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+    selector: 'app-home',
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  databaseService: any;
-  blogCollections: Observable<any>;
+
+    blogs: any;
+    blogCollections: Observable<any>;
 
 
-  constructor(
-    databaseService: DatabaseService
-  ) {
-    this.databaseService = databaseService;
-  }
+    constructor(
+        private database: DatabaseService
+    ) {
 
-  ngOnInit() {
-    this.blogCollections = this.databaseService.getBlogs();
-  }
+    }
+
+    ngOnInit() {
+        this.blogCollections = this.database.getBlogs();
+
+        this.blogCollections.subscribe(blogArray => {
+            this.blogs = blogArray;
+            console.log(this.blogs);
+        });
+
+    }
 }
