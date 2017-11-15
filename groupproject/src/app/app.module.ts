@@ -27,7 +27,8 @@ import {  DatabaseService} from './services/database.service';
 // Our routes
 const appRoutes = [
     { path: '', component: HomeComponent },
-    { path: 'admin', component: AdminComponent }
+    { path: 'admin', component: AdminComponent },
+    { path: 'form', component: BlogformComponent },
 
 ];
 
