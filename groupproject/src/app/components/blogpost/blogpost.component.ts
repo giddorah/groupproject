@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { DatabaseService } from './../../services/database.service';
+import { Observable } from 'rxjs/Observable';
+
 
 @Component({
   selector: 'app-blogpost',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogpostComponent implements OnInit {
 
-  constructor() { }
+  blogCollections: Observable<any>;
+  
+
+  constructor(
+    private database: DatabaseService
+  ) { }
 
   ngOnInit() {
+    this.blogCollections = this.database.getBlogs();
   }
 
 }
