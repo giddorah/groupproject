@@ -25,7 +25,8 @@
       <input class="form-control" formControlName="time">
     </label>
     <br>
-    <button *ngIf="getBool(blogFormGroup.value)" class="btn btn-warning" (click)="addFormValue()">Spara</button>
-    <button *ngIf="(getBool(blogFormGroup.value))" class="btn btn-warning">Ej Ifylld</button>
+    <!--<button *ngIf="getBool(blogFormGroup.value)" class="btn btn-warning" (click)="addFormValue()">Spara</button>
+    <button *ngIf="(getBool(blogFormGroup.value))" class="btn btn-warning">Ej Ifylld</button>-->
   </div>
+  <pre>{{blogFormGroup.value | json}}</pre>
 </form>
