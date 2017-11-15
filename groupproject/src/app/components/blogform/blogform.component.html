@@ -1,0 +1,31 @@
+<h4>Blog Form</h4>
+<form [formGroup]="blogFormGroup">
+  <div class="form-group">
+    <label class="center-block">
+      Name
+      <input class="form-control" formControlName="name">
+    </label>
+    <br>
+    <label class="center-block">
+      Title
+      <input class="form-control" formControlName="title">
+    </label>
+    <label class="center-block">
+      Message
+      <input class="form-control" formControlName="message">
+    </label>
+    <br>
+    <label class="center-block">
+      Tags
+      <input class="form-control" formControlName="tags">
+    </label>
+    <br>
+    <label class="center-block">
+      Time
+      <input class="form-control" formControlName="time">
+    </label>
+    <br>
+    <button *ngIf="getBool(blogFormGroup.value)" class="btn btn-warning" (click)="addFormValue()">Spara</button>
+    <button *ngIf="(getBool(blogFormGroup.value))" class="btn btn-warning">Ej Ifylld</button>
+  </div>
+</form>

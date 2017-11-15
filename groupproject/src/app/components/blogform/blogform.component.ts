@@ -8,7 +8,7 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 })
 export class BlogformComponent implements OnInit {
 
-    expFormGroup = new FormGroup(
+    blogFormGroup = new FormGroup(
         {
             name: new FormControl('', Validators.required),
             title: new FormControl('', Validators.required),
