@@ -23,7 +23,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BlogformComponent } from './components/blogform/blogform.component';
 
-
+import {  DatabaseService} from './services/database.service';
 // Our routes
 const appRoutes = [
     { path: '', component: HomeComponent },
@@ -50,7 +50,7 @@ const appRoutes = [
         AngularFireDatabaseModule,
         AngularFireAuthModule
     ],
-    providers: [],
+    providers: [DatabaseService],
     bootstrap: [AppComponent],
     schemas: [ NO_ERRORS_SCHEMA ]
 })
