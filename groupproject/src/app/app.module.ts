@@ -5,6 +5,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { environment } from './../environments/environment';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 // Extern
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -42,7 +45,10 @@ const appRoutes = [
         RouterModule.forRoot(appRoutes),
         MDBBootstrapModule.forRoot(),
         BrowserModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        AngularFireModule.initializeApp(environment.firebase),
+        AngularFireDatabaseModule,
+        AngularFireAuthModule
     ],
     providers: [],
     bootstrap: [AppComponent],
