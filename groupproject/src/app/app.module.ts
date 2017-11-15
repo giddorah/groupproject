@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { AdminComponent } from './components/admin/admin.component';
-
+import { environment } from './../environments/environment';
 // Extern
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -13,7 +13,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 // Forms
-import { ReactiveFormsModule } from "@angular/forms";
+import { ReactiveFormsModule } from '@angular/forms';
 import { BlogformComponent } from './components/blogform/blogform.component';
 
 
