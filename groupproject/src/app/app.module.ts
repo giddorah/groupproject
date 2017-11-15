@@ -26,6 +26,7 @@ import { BlogformComponent } from './components/blogform/blogform.component';
 
 import {  DatabaseService} from './services/database.service';
 import { FooterComponent } from './components/footer/footer.component';
+import { BlogpostComponent } from './components/blogpost/blogpost.component';
 // Our routes
 const appRoutes = [
     { path: '', component: HomeComponent },
@@ -42,7 +43,8 @@ const appRoutes = [
         HomeComponent,
         AdminComponent,
         BlogformComponent,
-        FooterComponent
+        FooterComponent,
+        BlogpostComponent
     ],
     imports: [
         NgbModule.forRoot(),
