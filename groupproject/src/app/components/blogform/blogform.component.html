@@ -15,7 +15,7 @@
             </div>
       
             <div class="md-form">
-                <input autocomplete="off" mdbActive type="text" class="form-control" formControlName="message">
+                <textarea autocomplete="off" mdbActive type="text" class="md-textarea" formControlName="message" style="height:300px"></textarea>
                 <label class="" for="message">Type your message</label>
           
             </div>
@@ -32,8 +32,8 @@
           
             </div>
       
-          <!--<button *ngIf="getBool(blogFormGroup.value)" class="btn btn-warning waves-light" (click)="addFormValue()">Save</button>
-          <button *ngIf="(getBool(blogFormGroup.value))" class="btn btn-warning waves-light">Not Entered</button>-->
+          <button *ngIf="getBool(blogFormGroup.value)" class="btn btn-warning waves-light" (click)="addFormValue()">Save</button>
+          <button *ngIf="(getBool(blogFormGroup.value))" class="btn btn-warning waves-light">Not Entered</button>
         </div>
       </form>
 </div>
