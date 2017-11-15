@@ -12,8 +12,8 @@ export class DatabaseService {
     firebase: any;
 
     constructor(private database: AngularFireDatabase) {
-        this.blogList = database.list("BlogCollection");
-        this.blogObject = database.object("BlogCollection");
+        this.blogList = database.list('collectionOfBlogs');
+        this.blogObject = database.object('collectionOfBlogs');
         this.firebase = firebase;
     }
 
@@ -25,23 +25,22 @@ export class DatabaseService {
 
     public getBlogs() {
 
-        return this.database.list("BlogCollection").valueChanges();
-        
+        return this.database.list('collectionOfBlogs').valueChanges();
+
     }
 
 
-    //public getKeys() {
-     
+    // public getKeys() {
+
     //    const keyArray = [];
     //    this.firebase.database().ref("BlogCollection").on("child_added", snapshot => {
     //        keyArray.push(snapshot.key);
     //    });
 
     //    return keyArray;
-    //}
+    // }
 
 
-    
 
 
 }

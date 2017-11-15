@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from "@angular/forms";
-
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { DatabaseService } from './../../services/database.service';
 @Component({
   selector: 'app-blogform',
   templateUrl: './blogform.component.html',
@@ -17,15 +17,33 @@ export class BlogformComponent implements OnInit {
             tags: new FormControl('', Validators.required)
         });
 
-  constructor() { }
+        newBlog: Blog;
+
+  constructor(private database: DatabaseService) {
+   }
 
   ngOnInit() {
   }
-  
+
+  public addFormValue() {
+    this.newBlog = this.blogFormGroup.value;
+    this.database.addBlog(this.newBlog);
+        }
+
+
   getBool():Boolean{
     //this.expFormGroup.status === 'VALID' ? true : false;
     if(this.blogFormGroup.status === 'VALID')
     return true;
     else return false;
   }
+
+  
+}
+interface Blog {
+  name: string;
+  title: string;
+  time: string;
+  tags: string;
+  message: string;
 }
