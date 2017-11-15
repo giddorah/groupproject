@@ -23,6 +23,11 @@ export class DatabaseService {
         this.blogList.push(blog);
     }
 
+    public deleteBlog(key: string) {
+
+        this.blogList.remove(key);
+    }
+
     public getBlogs() {
 
         return this.database.list("BlogCollection").valueChanges();
@@ -30,18 +35,27 @@ export class DatabaseService {
     }
 
 
-    //public getKeys() {
+    public getKeys() {
      
-    //    const keyArray = [];
-    //    this.firebase.database().ref("BlogCollection").on("child_added", snapshot => {
-    //        keyArray.push(snapshot.key);
-    //    });
+        const keyArray = [];
+        this.firebase.database().ref("BlogCollection").on("child_added", snapshot => {
+            keyArray.push(snapshot.key);
+        });
 
-    //    return keyArray;
-    //}
+        return keyArray;
+    }
 
 
-    
+    getBlogsAndKey() {
+
+        return this.blogList.snapshotChanges().map(changes => {
+            return changes.map(c => ({
+                key: c.payload.key, ...c.payload.val()
+            }));
+        });
+    }
+
+
 
 
 }
