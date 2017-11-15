@@ -12,8 +12,8 @@ export class DatabaseService {
     firebase: any;
 
     constructor(private database: AngularFireDatabase) {
-        this.blogList = database.list("BlogCollection");
-        this.blogObject = database.object("BlogCollection");
+        this.blogList = database.list('collectionOfBlogs');
+        this.blogObject = database.object('collectionOfBlogs');
         this.firebase = firebase;
     }
 
@@ -23,25 +23,50 @@ export class DatabaseService {
         this.blogList.push(blog);
     }
 
+    public deleteBlog(key: string) {
+
+        this.blogList.remove(key);
+    }
+
     public getBlogs() {
 
-        return this.database.list("BlogCollection").valueChanges();
-        
+        return this.database.list('collectionOfBlogs').valueChanges();
+
     }
 
 
-    //public getKeys() {
-     
+
+    // public getKeys() {
+
     //    const keyArray = [];
     //    this.firebase.database().ref("BlogCollection").on("child_added", snapshot => {
     //        keyArray.push(snapshot.key);
     //    });
 
     //    return keyArray;
-    //}
+    // }
+
+    public getKeys() {
+     
+        const keyArray = [];
+        this.firebase.database().ref("BlogCollection").on("child_added", snapshot => {
+            keyArray.push(snapshot.key);
+        });
+
+        return keyArray;
+    }
 
 
-    
+    getBlogsAndKey() {
+
+        return this.blogList.snapshotChanges().map(changes => {
+            return changes.map(c => ({
+                key: c.payload.key, ...c.payload.val()
+            }));
+        });
+    }
+
+
 
 
 }

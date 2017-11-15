@@ -19,10 +19,11 @@ export class HomeComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.blogCollections = this.database.getBlogs();
+        this.blogCollections = this.database.getBlogsAndKey();
 
         this.blogCollections.subscribe(blogArray => {
             this.blogs = blogArray;
+
             console.log(this.blogs);
         });
 
