@@ -21,5 +21,11 @@ export class BlogformComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  
+  getBool():Boolean{
+    //this.expFormGroup.status === 'VALID' ? true : false;
+    if(this.blogFormGroup.status === 'VALID')
+    return true;
+    else return false;
+  }
 }
