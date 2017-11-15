@@ -9,13 +9,13 @@
             </div>
       
             <div class="md-form">
-                <input autocomplete="off" mdbActive type="text" class="form-control" formControlName="title">
+                <input autocomplete="off" type="text" class="form-control" id="input_text" mdbActive formControlName="title">
                 <label class="" for="title">Type your title</label>
           
             </div>
       
             <div class="md-form">
-                <input autocomplete="off" mdbActive type="text" class="form-control" formControlName="message">
+                <textarea autocomplete="off" mdbActive type="text" class="md-textarea" length="120" mdbCharCounter formControlName="message" style="height:300px"></textarea>
                 <label class="" for="message">Type your message</label>
           
             </div>
@@ -37,4 +37,3 @@
         </div>
       </form>
 </div>
-
