@@ -1,31 +1,40 @@
-<h4>Blog Form</h4>
-<form [formGroup]="blogFormGroup">
-  <div class="form-group">
-    <label class="center-block">
-      Name
-      <input class="form-control" formControlName="name">
-    </label>
-    <br>
-    <label class="center-block">
-      Title
-      <input class="form-control" formControlName="title">
-    </label>
-    <label class="center-block">
-      Message
-      <input class="form-control" formControlName="message">
-    </label>
-    <br>
-    <label class="center-block">
-      Tags
-      <input class="form-control" formControlName="tags">
-    </label>
-    <br>
-    <label class="center-block">
-      Time
-      <input class="form-control" formControlName="time">
-    </label>
-    <br>
-    <button *ngIf="getBool(blogFormGroup.value)" class="btn btn-warning" (click)="addFormValue()">Spara</button>
-    <button *ngIf="(getBool(blogFormGroup.value))" class="btn btn-warning">Ej Ifylld</button>
-  </div>
-</form>
+<div class="pt-50">
+    <form [formGroup]="blogFormGroup">
+        <div class="form-group">
+      
+      
+            <div class="md-form">
+                <input autocomplete="off" mdbActive type="text" class="form-control" formControlName="name">
+                <label for="name" class="">Type your name</label>
+            </div>
+      
+            <div class="md-form">
+                <input autocomplete="off" mdbActive type="text" class="form-control" formControlName="title">
+                <label class="" for="title">Type your title</label>
+          
+            </div>
+      
+            <div class="md-form">
+                <input autocomplete="off" mdbActive type="text" class="form-control" formControlName="message">
+                <label class="" for="message">Type your message</label>
+          
+            </div>
+      
+            <div class="md-form">
+                <input autocomplete="off" mdbActive type="text" class="form-control" formControlName="tags">
+                <label class="" for="tags">Type your tags</label>
+          
+            </div>
+      
+            <div class="md-form">
+                <input autocomplete="off" mdbActive type="text" class="form-control" formControlName="time">
+                <label class="" for="time">Type your time</label>
+          
+            </div>
+      
+          <button *ngIf="getBool(blogFormGroup.value)" class="btn btn-warning waves-light" (click)="addFormValue()">Save</button>
+          <button *ngIf="(getBool(blogFormGroup.value))" class="btn btn-warning waves-light">Not Entered</button>
+        </div>
+      </form>
+</div>
+
