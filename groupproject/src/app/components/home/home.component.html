@@ -1,3 +1,15 @@
-<p>
-  home works!
-</p>
+<div class="container">
+<div class="row">
+  <div class="col">
+    
+      <div *ngFor="let blogs of blogCollections | async">
+        <h1>{{blogs.name}}</h1>
+        <h1>{{blogs.title}}</h1>
+        <h1>{{blogs.message}}</h1>
+        <h1>{{blogs.tags}}</h1>
+        
+        
+      </div>
+</div>
+</div>
+</div>
