@@ -27,7 +27,8 @@ import { BlogformComponent } from './components/blogform/blogform.component';
 // Our routes
 const appRoutes = [
     { path: '', component: HomeComponent },
-    { path: 'admin', component: AdminComponent }
+    { path: 'admin', component: AdminComponent },
+    { path: 'form', component: BlogformComponent },
 
 ];
 

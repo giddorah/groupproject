@@ -1,42 +1,40 @@
-<h4>Blog Form</h4>
-<form [formGroup]="blogFormGroup">
-  <div class="md-form form-group">
-    <label class="center-block">
-      Name
-      <i class="fa fa-user prefix grey-text"></i>
-      <input class="form-control" formControlName="name">
-      <label class="active" for="name">Type your name</label>
+<div class="pt-50">
+    <form [formGroup]="blogFormGroup">
+        <div class="form-group">
       
-    </label>
-    <br>
-    <label class="center-block">
-      Title
-      <i class="fa fa-user prefix grey-text"></i>
-      <input class="form-control" formControlName="title">
-      <label class="active" for="title">Type your title</label>
-    </label>
-    <label class="center-block">
-      Message
-      <i class="fa fa-user prefix grey-text"></i>
-      <input class="form-control" formControlName="message">
-      <label class="active" for="message">Type your message</label>
-    </label>
-    <br>
-    <label class="center-block">
-      Tags
-      <i class="fa fa-user prefix grey-text"></i>
-      <input class="form-control" formControlName="tags">
-      <label class="active" for="tags">Type your tags</label>
-    </label>
-    <br>
-    <label class="center-block">
-      Time
-      <i class="fa fa-user prefix grey-text"></i>
-      <input class="form-control" formControlName="time">
-      <label class="active" for="time">Type your time</label>
-    </label>
-    <br>
-    <button *ngIf="getBool(blogFormGroup.value)" class="btn btn-warning waves-light" (click)="addFormValue()">Save</button>
-    <button *ngIf="(getBool(blogFormGroup.value))" class="btn btn-warning waves-light">Not Entered</button>
-  </div>
-</form>
+      
+            <div class="md-form">
+                <input autocomplete="off" mdbActive type="text" class="form-control" formControlName="name">
+                <label for="name" class="">Type your name</label>
+            </div>
+      
+            <div class="md-form">
+                <input autocomplete="off" mdbActive type="text" class="form-control" formControlName="title">
+                <label class="" for="title">Type your title</label>
+          
+            </div>
+      
+            <div class="md-form">
+                <input autocomplete="off" mdbActive type="text" class="form-control" formControlName="message">
+                <label class="" for="message">Type your message</label>
+          
+            </div>
+      
+            <div class="md-form">
+                <input autocomplete="off" mdbActive type="text" class="form-control" formControlName="tags">
+                <label class="" for="tags">Type your tags</label>
+          
+            </div>
+      
+            <div class="md-form">
+                <input autocomplete="off" mdbActive type="text" class="form-control" formControlName="time">
+                <label class="" for="time">Type your time</label>
+          
+            </div>
+      
+          <button *ngIf="getBool(blogFormGroup.value)" class="btn btn-warning waves-light" (click)="addFormValue()">Save</button>
+          <button *ngIf="(getBool(blogFormGroup.value))" class="btn btn-warning waves-light">Not Entered</button>
+        </div>
+      </form>
+</div>
+
