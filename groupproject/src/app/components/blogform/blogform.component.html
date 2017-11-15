@@ -1,31 +1,42 @@
 <h4>Blog Form</h4>
 <form [formGroup]="blogFormGroup">
-  <div class="form-group">
+  <div class="md-form form-group">
     <label class="center-block">
       Name
+      <i class="fa fa-user prefix grey-text"></i>
       <input class="form-control" formControlName="name">
+      <label class="active" for="name">Type your name</label>
+      
     </label>
     <br>
     <label class="center-block">
       Title
+      <i class="fa fa-user prefix grey-text"></i>
       <input class="form-control" formControlName="title">
+      <label class="active" for="title">Type your title</label>
     </label>
     <label class="center-block">
       Message
+      <i class="fa fa-user prefix grey-text"></i>
       <input class="form-control" formControlName="message">
+      <label class="active" for="message">Type your message</label>
     </label>
     <br>
     <label class="center-block">
       Tags
+      <i class="fa fa-user prefix grey-text"></i>
       <input class="form-control" formControlName="tags">
+      <label class="active" for="tags">Type your tags</label>
     </label>
     <br>
     <label class="center-block">
       Time
+      <i class="fa fa-user prefix grey-text"></i>
       <input class="form-control" formControlName="time">
+      <label class="active" for="time">Type your time</label>
     </label>
     <br>
-    <button *ngIf="getBool(blogFormGroup.value)" class="btn btn-warning" (click)="addFormValue()">Spara</button>
-    <button *ngIf="(getBool(blogFormGroup.value))" class="btn btn-warning">Ej Ifylld</button>
+    <button *ngIf="getBool(blogFormGroup.value)" class="btn btn-warning waves-light" (click)="addFormValue()">Save</button>
+    <button *ngIf="(getBool(blogFormGroup.value))" class="btn btn-warning waves-light">Not Entered</button>
   </div>
 </form>
