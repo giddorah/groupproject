@@ -13,7 +13,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 // Extern
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import { NgPipesModule } from 'ngx-pipes';
+import {NgPipesModule } from 'ngx-pipes';
 
 // Routes
 import { RouterModule, Routes } from '@angular/router';
@@ -22,7 +22,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BlogformComponent } from './components/blogform/blogform.component';
 
-import { DatabaseService } from './services/database.service';
+import {  DatabaseService} from './services/database.service';
 import { FooterComponent } from './components/footer/footer.component';
 import { BlogpostComponent } from './components/blogpost/blogpost.component';
 
@@ -54,10 +54,10 @@ const appRoutes = [
         AngularFireModule.initializeApp(environment.firebase),
         AngularFireDatabaseModule,
         AngularFireAuthModule,
-        NgPipesModule
+        NgPipesModule 
     ],
     providers: [DatabaseService],
     bootstrap: [AppComponent],
-    schemas: [NO_ERRORS_SCHEMA]
+    schemas: [ NO_ERRORS_SCHEMA ]
 })
 export class AppModule { }
