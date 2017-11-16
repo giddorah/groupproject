@@ -13,8 +13,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 // Extern
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-
-
+import {NgPipesModule } from 'ngx-pipes';
 
 // Routes
 import { RouterModule, Routes } from '@angular/router';
@@ -54,7 +53,8 @@ const appRoutes = [
         ReactiveFormsModule,
         AngularFireModule.initializeApp(environment.firebase),
         AngularFireDatabaseModule,
-        AngularFireAuthModule
+        AngularFireAuthModule,
+        NgPipesModule 
     ],
     providers: [DatabaseService],
     bootstrap: [AppComponent],

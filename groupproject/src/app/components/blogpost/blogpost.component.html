@@ -1,4 +1,4 @@
-<div *ngFor="let blog of blogCollections | async">
+<div *ngFor="let blog of blogCollections | async | reverse">
 <!--Card-->
 <div class="card card-cascade reverse my-4">
 
@@ -9,7 +9,7 @@
                 <strong>{{blog.title}}</strong>
             </h3>
             <p class="grey-text">
-                <i class="fa fa-calendar"></i> {{blog.time}}
+                <i class="fa fa-calendar"></i> {{timeCal(blog)}}
                 <i class="fa fa-user prefix"> {{blog.name}}</i>
             </p>
 

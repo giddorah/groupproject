@@ -75,7 +75,7 @@ export class DatabaseService {
 interface Blog {
     name: string;
     title: string;
-    time: string;
+    time: number;
     tags: string;
     message: string;
 }

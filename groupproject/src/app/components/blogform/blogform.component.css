@@ -1,0 +1,7 @@
+.rounded-corners {
+    border-radius: 0.25rem;
+    border:1px solid black;
+}
+.width-control{
+    width:250px;
+}
