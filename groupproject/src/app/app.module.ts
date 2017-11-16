@@ -29,9 +29,7 @@ import { BlogpostComponent } from './components/blogpost/blogpost.component';
 // Our routes
 const appRoutes = [
     { path: '', component: HomeComponent },
-    { path: 'admin', component: AdminComponent },
-    { path: 'form', component: BlogformComponent },
-
+    { path: 'admin', component: AdminComponent }
 ];
 
 
