@@ -27,9 +27,22 @@ export class BlogformComponent implements OnInit {
     }
 
     public addFormValue() {
+
         this.newBlog = this.blogFormGroup.value;
+        var tags = this.blogFormGroup.value.tags.split(" ");
+        this.newBlog.tags = tags;
         this.newBlog.time = Date.now();
         this.database.addBlog(this.newBlog);
+
+        this.blogFormGroup.reset(
+            {
+                name: '',
+                title: '',
+                message: '',
+                tags: 'unsorted'
+            }
+        );
+        this.showTagBar = false;
     }
 
     getBool(): Boolean {
@@ -56,12 +69,12 @@ export class BlogformComponent implements OnInit {
         );
         this.showTagBar = true;
     }
-
 }
+
 interface Blog {
     name: string;
     title: string;
     time: number;
-    tags: string;
+    tags: string[];
     message: string;
 }

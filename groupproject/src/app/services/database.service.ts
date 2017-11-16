@@ -55,7 +55,7 @@ interface Blog {
     name: string;
     title: string;
     time: number;
-    tags: string;
+    tags: string[];
     message: string;
 }
 

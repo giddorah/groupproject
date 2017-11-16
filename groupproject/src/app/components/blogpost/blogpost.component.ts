@@ -13,17 +13,19 @@ import { ReversePipe } from 'ngx-pipes';
 export class BlogpostComponent implements OnInit {
 
   blogCollections: Observable<any>;
+  tagArray: string[];
+
 
   constructor(
     private database: DatabaseService
   ) { }
 
   ngOnInit() {
-     this.getBlogs();
+    this.getBlogs();
   }
 
-  getBlogs(){
-    this.blogCollections =this.database.getBlogs();
+  getBlogs() {
+    this.blogCollections = this.database.getBlogs();
   }
 
   timeCal(blog) {
@@ -35,22 +37,40 @@ export class BlogpostComponent implements OnInit {
     return date.getFullYear() + "-" + month + "-" + date.getDate();
   }
 
+  findTag(tags, tagToFind){
+    var tagToSendBack = tags[0];
+    tags.forEach(tag => {
+      if(tag === tagToFind) {
+        console.log(tag + " + " + tagToFind);
+        tagToSendBack = tag;
+        return;
+      }
+    });
+    return tagToSendBack;
+  }
+
   filterByTag(tagToFilterBy) {
+    // console.log(tagToFilterBy);
     this.getBlogs();
-    this.blogCollections = this.blogCollections.map(blog => 
-      blog.filter(blog => blog.tags === tagToFilterBy));
+    this.blogCollections = this.blogCollections.map(blogs =>
+      blogs.filter(blog => 
+       this.findTag(blog.tags, tagToFilterBy) === tagToFilterBy
+    ));
   }
 
   filterByName(nameToFilterBy) {
     this.getBlogs();
-    this.blogCollections = this.blogCollections.map(blog => 
-      blog.filter(blog => blog.name === nameToFilterBy));
+    this.blogCollections = this.blogCollections.map(blogs =>
+      blogs.filter(blog => blog.name === nameToFilterBy));
   }
 
   filterByTime(timeToFilterBy) {
     this.getBlogs();
-    this.blogCollections = this.blogCollections.map(blog => 
+    this.blogCollections = this.blogCollections.map(blog =>
       blog.filter(blog => this.timeCal(blog) === timeToFilterBy));
+  }
+  tagsArray(tags) {
+    return this.tagArray = tags;
   }
 
 }
