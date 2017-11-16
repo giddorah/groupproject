@@ -3,7 +3,7 @@
             <div class="photo photo1"></div>
             <ul class="details">
                 <li class="author">
-                    <a href="#">{{blog.name}}</a>
+                    <a (click)=sortByName(blog.name)>{{blog.name}}</a>
                 </li>
                 <li class="date">{{timeCal(blog)}}</li>
                 <li class="tags">

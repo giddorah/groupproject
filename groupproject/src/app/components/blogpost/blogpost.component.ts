@@ -14,7 +14,6 @@ export class BlogpostComponent implements OnInit {
 
   blogCollections: Observable<any>;
 
-
   constructor(
     private database: DatabaseService
   ) { }
@@ -32,9 +31,14 @@ export class BlogpostComponent implements OnInit {
     return date.getFullYear() + "-" + month + "-" + date.getDate();
   }
 
-  sortByTags(tags) {
+  sortByTags(tagsToFilterBy) {
     this.blogCollections = this.blogCollections.map(blog => 
-      blog.filter(blog => blog.tags === tags));
+      blog.filter(blog => blog.tags === tagsToFilterBy));
+  }
+
+  sortByName(nameToFilterBy) {
+    this.blogCollections = this.blogCollections.map(blog => 
+      blog.filter(blog => blog.name === nameToFilterBy));
   }
 
 }
