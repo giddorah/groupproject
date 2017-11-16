@@ -19,7 +19,11 @@ export class BlogpostComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.blogCollections = this.database.getBlogs();
+     this.getBlogs();
+  }
+
+  getBlogs(){
+    this.blogCollections =this.database.getBlogs();
   }
 
   timeCal(blog) {
@@ -31,14 +35,22 @@ export class BlogpostComponent implements OnInit {
     return date.getFullYear() + "-" + month + "-" + date.getDate();
   }
 
-  sortByTags(tagsToFilterBy) {
+  filterByTag(tagToFilterBy) {
+    this.getBlogs();
     this.blogCollections = this.blogCollections.map(blog => 
-      blog.filter(blog => blog.tags === tagsToFilterBy));
+      blog.filter(blog => blog.tags === tagToFilterBy));
   }
 
-  sortByName(nameToFilterBy) {
+  filterByName(nameToFilterBy) {
+    this.getBlogs();
     this.blogCollections = this.blogCollections.map(blog => 
       blog.filter(blog => blog.name === nameToFilterBy));
+  }
+
+  filterByTime(timeToFilterBy) {
+    this.getBlogs();
+    this.blogCollections = this.blogCollections.map(blog => 
+      blog.filter(blog => this.timeCal(blog) === timeToFilterBy));
   }
 
 }
