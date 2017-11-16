@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { DatabaseService } from './../../services/database.service';
 import { Observable } from 'rxjs/Observable';
-import { ReversePipe} from 'ngx-pipes';
+import { ReversePipe } from 'ngx-pipes';
 
 
 @Component({
   selector: 'app-blogpost',
   templateUrl: './blogpost.component.html',
   styleUrls: ['./blogpost.component.scss'],
-  providers: [ReversePipe]  
+  providers: [ReversePipe]
 })
 export class BlogpostComponent implements OnInit {
 
   blogCollections: Observable<any>;
-  
+
 
   constructor(
     private database: DatabaseService
@@ -23,13 +23,18 @@ export class BlogpostComponent implements OnInit {
     this.blogCollections = this.database.getBlogs();
   }
 
-  timeCal(blog){
+  timeCal(blog) {
     var date = new Date(blog.time);
-    var month = "" + (date.getMonth()+1);
-    month.length == 1 ? month = "0"+ month : month
-    var day = "" + date.getDate(); 
-    day.length == 1 ? day = "0"+ day : day    
-    return date.getFullYear() + "-" + month + "-"+ date.getDate();
+    var month = "" + (date.getMonth() + 1);
+    month.length == 1 ? month = "0" + month : month
+    var day = "" + date.getDate();
+    day.length == 1 ? day = "0" + day : day
+    return date.getFullYear() + "-" + month + "-" + date.getDate();
+  }
+
+  sortByTags(tags) {
+    this.blogCollections = this.blogCollections.map(blog => 
+      blog.filter(blog => blog.tags === tags));
   }
 
 }
