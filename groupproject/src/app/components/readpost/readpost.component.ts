@@ -12,8 +12,8 @@ export class ReadpostComponent implements OnInit {
 
     //@Input() passedKey: string;
     key: string;
-    blogs: any;
-   
+    blog: any;
+    tagArray: string[];    
     
     constructor(private database: DatabaseService, private activatedRoute : ActivatedRoute)
     {
@@ -26,14 +26,14 @@ export class ReadpostComponent implements OnInit {
 
       this.key = this.activatedRoute.snapshot.params["key"];
 
-      this.blogs = this.database.getBlogByKey(this.key).subscribe(b => {
+      this.blog = this.database.getBlogByKey(this.key).subscribe(b => {
 
-          this.blogs = b;
+          this.blog = b;
 
       });
 
 
-      console.log(this.blogs);
+      console.log(this.blog);
       console.log(this.key);
 
     }
@@ -47,4 +47,11 @@ export class ReadpostComponent implements OnInit {
       return date.getFullYear() + "-" + month + "-" + date.getDate();
     }
 
+    filter(filterType, filterCriteria){
+      return filterType + "=" +filterCriteria;
+    }
+
+    tagsArray(tags) {
+      return this.tagArray = tags;
+    }
 }
