@@ -1,45 +1,13 @@
-<<<<<<< HEAD
-<div class="blog-card">
-    <div class="photo photo1"></div>
-    <ul class="details">
-        <li class="author">
-            <a (click)=filterByName(blog.name)>{{blog.name}}</a>
-        </li>
-        <li class="date">
-            <a (click)=filterByTime(timeCal(blog))>{{timeCal(blog)}}</a>
-        </li>
-        <li class="tags">
-            <ul>
-                <li>
-                    <div class="row">
-                        <div *ngFor="let tag of tagsArray(blog.tags) first as isFirst">
-                            
-                            <!-- makes so the first tag doesn't touch the tags icon -->
-                            <span *ngIf=isFirst class="mx-1"> </span>
-                            
-                            <span *ngIf=!isFirst> {{","}}</span>
-                            <a (click)=filterByTag(tag)>
-                                {{tag}}
-                            </a>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </li>
-    </ul>
-    <div class="description">
-        <h1>{{blog.title.substring(0, 17)}}</h1>
-        <h2>Subtitle</h2>
-        <p class="summary">{{blog.message.substring(0, 150)}}</p>
-    </div>
-</div>
-=======
 <div class="container">
   <div class="row">
     <div class="col">
-      <p>Readpost works!</p>
+        <p>{{blogs.name}}</p>
+        <p>{{blogs.title}}</p>
+        <p>{{blogs.tags}}</p>
+        <p>{{blogs.message}}</p>
+        <p>{{blogs.time}}</p>
     </div>
   </div>
 </div>
 
->>>>>>> f4b9cd3cea60fd2b96d402000c0209d57029fb08
+

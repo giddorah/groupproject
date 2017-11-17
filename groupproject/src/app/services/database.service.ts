@@ -31,6 +31,7 @@ export class DatabaseService {
         return this.database.list('collectionOfBlogs').valueChanges();
     }
 
+
     public getKeys() {
 
         const keyArray = [];

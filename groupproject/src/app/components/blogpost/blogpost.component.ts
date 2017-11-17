@@ -12,6 +12,7 @@ import { ReversePipe } from 'ngx-pipes';
 })
 export class BlogpostComponent implements OnInit {
 
+
   blogCollections: Observable<any>;
   tagArray: string[];
 
