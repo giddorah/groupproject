@@ -17,9 +17,7 @@ export class DatabaseService {
         this.firebase = firebase;
     }
 
-
-    public addBlog(blog: Blog)
-    {
+    public addBlog(blog: Blog) {
         this.blogList.push(blog);
     }
 
@@ -31,23 +29,11 @@ export class DatabaseService {
     public getBlogs() {
 
         return this.database.list('collectionOfBlogs').valueChanges();
-
     }
 
 
-
-    // public getKeys() {
-
-    //    const keyArray = [];
-    //    this.firebase.database().ref("BlogCollection").on("child_added", snapshot => {
-    //        keyArray.push(snapshot.key);
-    //    });
-
-    //    return keyArray;
-    // }
-
     public getKeys() {
-     
+
         const keyArray = [];
         this.firebase.database().ref("BlogCollection").on("child_added", snapshot => {
             keyArray.push(snapshot.key);
@@ -55,7 +41,6 @@ export class DatabaseService {
 
         return keyArray;
     }
-
 
     getBlogsAndKey() {
 
@@ -66,17 +51,16 @@ export class DatabaseService {
         });
     }
 
-
-
-
+    public getBlogByKey(key: string) {
+        return this.database.object('collectionOfBlogs/' + key).valueChanges();
+    }
 }
-
 
 interface Blog {
     name: string;
     title: string;
-    time: string;
-    tags: string;
+    time: number;
+    tags: string[];
     message: string;
 }
 

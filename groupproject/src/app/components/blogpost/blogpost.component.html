@@ -1,16 +1,34 @@
-<div *ngFor="let blog of blogCollections | async">
-<div class="blog-card">
+<div *ngFor="let blog of blogCollections | async | reverse  ">
+    <div class="blog-card">
         <div class="photo photo1"></div>
         <ul class="details">
-            <li class="author"><a href="#">{{blog.name}}</a></li>
-            <li class="date">{{blog.time}}</li>
+            <li class="author">
+                <a (click)=filterByName(blog.name)>{{blog.name}}</a>
+            </li>
+            <li class="date">
+                <a (click)=filterByTime(timeCal(blog.time))>{{timeCal(blog.time)}}</a>
+            </li>
             <li class="tags">
                 <ul>
-                    <li><a href="#">{{blog.tags}}</a></li>
+                    <li>
+                        <div class="row">
+                            <div *ngFor="let tag of tagsArray(blog.tags) first as isFirst">
+                                
+                                <!-- makes so the first tag doesn't touch the tags icon -->
+                                <span *ngIf=isFirst class="mx-2"> </span>
+                                
+                                <span *ngIf=!isFirst> {{","}}</span>
+                                <a (click)=filterByTag(tag)>
+                                    {{tag}}
+                                </a>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </li>
         </ul>
         <div class="description">
+<<<<<<< HEAD
             <h1>{{blog.title}}</h1>
             <h2>Sub title</h2>
             <p class="summary">{{blog.message}}</p>
@@ -18,3 +36,13 @@
         </div>
     </div>
 </div>
+=======
+          <h1>{{blog.title.substring(0, 17)}}</h1>
+            <h2>Summary</h2>
+            <p class="summary">{{blog.message.substring(0, 147)}}...</p>
+            <!--<app-readpost [passedKey]="blog.key"></app-readpost>-->
+          <a [routerLink]="['/readpost/', blog.key]">Read More</a>
+        </div>
+    </div>
+</div>
+>>>>>>> Michaels-Branch
