@@ -49,6 +49,10 @@ export class DatabaseService {
             }));
         });
     }
+
+    public getBlogByKey(key: string) {
+        return this.database.object('collectionOfBlogs/' + key).valueChanges();
+    }
 }
 
 interface Blog {
