@@ -198,10 +198,12 @@ body {background: #f1f1f1; margin: 2rem}
 		&.alt {
 			.details {
 				padding-left: 30px;
+				min-height: 400px;
 			}
 
 			.description {
 				float: right;
+				min-height: 400px;
 
 				&:before {
 					transform: skewX(5deg);
@@ -225,6 +227,7 @@ body {background: #f1f1f1; margin: 2rem}
 
 		.details {
 			width: 40%;
+			min-height: 400px;			
 		}
 
 		.description {
@@ -232,6 +235,8 @@ body {background: #f1f1f1; margin: 2rem}
 			width: 60%;
 			z-index: 0;
 			min-height: 400px;
+			padding-top: 1px;
+			
 
 			&:before {
 				transform: skewX(-5deg);
