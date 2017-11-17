@@ -1,13 +1,14 @@
-<div class="container">
-  <div class="row">
-    <div class="col">
-        <p>{{blogs.name}}</p>
-        <p>{{blogs.title}}</p>
-        <p>{{blogs.tags}}</p>
-        <p>{{blogs.message}}</p>
-        <p>{{timeCal(blogs.time)}}</p>
-    </div>
-  </div>
+<div class="card card-cascade wider reverse my-4">
+  <div class="card-body text-center">
+    <h4 class="card-title"><strong>{{blogs.title}}</strong></h4>
+    <h5 class="indigo-text"><strong>{{blogs.tags}}</strong></h5>
+    <p class="card-text">{{blogs.message}}</p>
+    <h5 class="grey-text">{{blogs.name}} - {{timeCal(blogs.time)}}</h5>
+    <a class="icons-sm li-ic"><i class="fa fa-linkedin"> </i></a>
+    <a class="icons-sm tw-ic"><i class="fa fa-twitter"> </i></a>
+    <a class="icons-sm fb-ic"><i class="fa fa-facebook"> </i></a>
+  </div>  
 </div>
-
+  
+  
 
