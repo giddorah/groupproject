@@ -15,7 +15,7 @@
                             <div *ngFor="let tag of tagsArray(blog.tags) first as isFirst">
                                 
                                 <!-- makes so the first tag doesn't touch the tags icon -->
-                                <span *ngIf=isFirst class="mx-1"> </span>
+                                <span *ngIf=isFirst class="mx-2"> </span>
                                 
                                 <span *ngIf=!isFirst> {{","}}</span>
                                 <a (click)=filterByTag(tag)>
