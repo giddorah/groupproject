@@ -31,7 +31,7 @@
             <h1>{{blog.title.substring(0, 17)}}</h1>
             <h2>Subtitle</h2>
             <p class="summary">{{blog.message.substring(0, 150)}}</p>
-            <a href="#">Read More</a>
+            <a [routerLink]="['/readpost/']">Read More</a>
         </div>
     </div>
 </div>

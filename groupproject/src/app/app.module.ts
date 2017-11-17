@@ -5,6 +5,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { AdminComponent } from './components/admin/admin.component';
 
+
 import { environment } from './../environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -25,11 +26,13 @@ import { BlogformComponent } from './components/blogform/blogform.component';
 import {  DatabaseService} from './services/database.service';
 import { FooterComponent } from './components/footer/footer.component';
 import { BlogpostComponent } from './components/blogpost/blogpost.component';
+import { ReadpostComponent } from './components/readpost/readpost.component';
 
 // Our routes
 const appRoutes = [
     { path: '', component: HomeComponent },
-    { path: 'admin', component: AdminComponent }
+    { path: 'admin', component: AdminComponent },
+    { path: 'readpost/: key', component: ReadpostComponent },
 ];
 
 
@@ -41,7 +44,8 @@ const appRoutes = [
         AdminComponent,
         BlogformComponent,
         FooterComponent,
-        BlogpostComponent
+        BlogpostComponent,
+        ReadpostComponent
     ],
     imports: [
         NgbModule.forRoot(),
