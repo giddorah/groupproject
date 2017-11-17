@@ -30,6 +30,17 @@ export class BlogformComponent implements OnInit {
 
         this.newBlog = this.blogFormGroup.value;
         var tags = this.blogFormGroup.value.tags.split(" ");
+        var indexes = [];
+        tags.forEach((tag,index) => {
+            if(tag == ""){
+                indexes.push(index);
+            }
+        });
+        indexes.reverse();
+        indexes.forEach(index => {
+            tags.splice(index, 1);
+        });
+        
         this.newBlog.tags = tags;
         this.newBlog.time = Date.now();
         this.database.addBlog(this.newBlog);
