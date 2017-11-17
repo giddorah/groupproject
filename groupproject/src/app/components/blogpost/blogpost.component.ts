@@ -30,8 +30,8 @@ export class BlogpostComponent implements OnInit {
     this.blogCollections = this.database.getBlogsAndKey();
   }
 
-  timeCal(blog) {
-    var date = new Date(blog.time);
+  timeCal(time : number) {
+    var date = new Date(time);
     var month = "" + (date.getMonth() + 1);
     month.length == 1 ? month = "0" + month : month
     var day = "" + date.getDate();
@@ -69,7 +69,7 @@ export class BlogpostComponent implements OnInit {
   filterByTime(timeToFilterBy) {
     this.getBlogs();
     this.blogCollections = this.blogCollections.map(blog =>
-      blog.filter(blog => this.timeCal(blog) === timeToFilterBy));
+      blog.filter(blog => this.timeCal(blog.time) === timeToFilterBy));
   }
   tagsArray(tags) {
     return this.tagArray = tags;

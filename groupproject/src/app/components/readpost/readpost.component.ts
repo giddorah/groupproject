@@ -38,4 +38,13 @@ export class ReadpostComponent implements OnInit {
 
     }
 
+    timeCal(time : number) {
+      var date = new Date(time);
+      var month = "" + (date.getMonth() + 1);
+      month.length == 1 ? month = "0" + month : month
+      var day = "" + date.getDate();
+      day.length == 1 ? day = "0" + day : day
+      return date.getFullYear() + "-" + month + "-" + date.getDate();
+    }
+
 }
