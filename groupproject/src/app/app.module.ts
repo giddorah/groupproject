@@ -32,7 +32,7 @@ import { ReadpostComponent } from './components/readpost/readpost.component';
 const appRoutes = [
     { path: '', component: HomeComponent },
     { path: 'admin', component: AdminComponent },
-    { path: 'readpost/: key', component: ReadpostComponent },
+    { path: 'readpost/: key', component: ReadpostComponent }
 ];
 
 
