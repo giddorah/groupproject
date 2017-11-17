@@ -15,17 +15,18 @@ export class BlogpostComponent implements OnInit {
   blogCollections: Observable<any>;
   tagArray: string[];
 
-
   constructor(
     private database: DatabaseService
   ) { }
 
   ngOnInit() {
-    this.getBlogs();
+      this.getBlogs();
   }
 
+
+
   getBlogs() {
-    this.blogCollections = this.database.getBlogs();
+    this.blogCollections = this.database.getBlogsAndKey();
   }
 
   timeCal(blog) {
