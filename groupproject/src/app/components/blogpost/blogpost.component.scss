@@ -197,11 +197,13 @@ body {background: #f1f1f1; margin: 2rem}
 
 		&.alt {
 			.details {
-				padding-left: 30px;
+                padding-left: 30px;
+                min-height: 400px;
 			}
 
 			.description {
-				float: right;
+                float: right;
+                min-height: 400px;
 
 				&:before {
 					transform: skewX(5deg);
@@ -224,17 +226,24 @@ body {background: #f1f1f1; margin: 2rem}
 		}
 
 		.details {
-			width: 40%;
+            width: 40%;
+            min-height: 400px;
 		}
 
 		.description {
 			float: left;
 			width: 60%;
+<<<<<<< HEAD
 			z-index: 0;
 <<<<<<< HEAD
 =======
 			min-height: 400px;
 >>>>>>> Michaels-Branch
+=======
+            z-index: 0;
+            min-height: 400px;
+            padding-top: 1px;
+>>>>>>> 7b657e95c0830d78477320f0bd32105803f59f5d
 
 			&:before {
 				transform: skewX(-5deg);
