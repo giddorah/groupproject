@@ -29,7 +29,7 @@ export class DatabaseService {
     }
 
     public getBlogs() {
-        // Gets all the blogs and lists (returns) them.
+        // Gets all the blogs and lists (returns) them async, so they can be used for dynamically updating the webpage on changes.
         return this.database.list('collectionOfBlogs').valueChanges();
     }
 
