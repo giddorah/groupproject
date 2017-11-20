@@ -15,6 +15,8 @@ export class BlogpostComponent implements OnInit {
 
   blogCollections: Observable<any>;
   tagArray: string[];
+
+  // Passed from home.component.html
   @Input() passedKey: string
 
 
