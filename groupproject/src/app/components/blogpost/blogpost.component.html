@@ -31,7 +31,7 @@
           <h1>{{blog.title.substring(0, 17)}}</h1>
             <h2>Summary</h2>
             <p class="summary">{{blog.message.substring(0, 147)}}...</p>
-            <!--<app-readpost [passedKey]="blog.key"></app-readpost>-->
+            <!--We send the key for the specific post in the router link so that we can access the chosen blogpost in its entirety on /readpost-->
           <a [routerLink]="['/readpost/', blog.key]">Read More</a>
         </div>
     </div>

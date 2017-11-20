@@ -3,6 +3,8 @@
 // `ng build --env=prod` then `environment.prod.ts` will be used instead.
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
+// Michaels database is being used for testing while Ludwigs database is enabled when production is set to true.
+
 var ludwigKey = 'AIzaSyCEbDIc88YT_UuAIwXJF9GwftdGMlZQvGY';
 var ludwigAuthDomain = 'blogspot-2240c.firebaseapp.com';
 var ludwigDatabaseURL = 'https://blogspot-2240c.firebaseio.com';
