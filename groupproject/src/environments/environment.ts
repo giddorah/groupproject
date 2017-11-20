@@ -17,7 +17,7 @@ var michaelProjectId = "first-project-7ecd5";
 var michaelStorageBucket = "first-project-7ecd5.appspot.com";
 var michaelMessagingSenderId = "219423430237";
 
-
+// Current used API/Firebase database
 export const environment = {
   production: false,
   firebase: {
