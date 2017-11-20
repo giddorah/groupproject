@@ -3,10 +3,10 @@
     <h4 class="card-title">
       <strong>{{blog.title}}</strong>
     </h4>
-    <h5 class="grey-text centered">
+    <h5 class="grey-text text-center">
       <strong>
         <div class="row">
-          <div *ngFor="let tag of tagsArray(blog.tags) last as isLast">
+          <div class="center" style="margin:auto" *ngFor="let tag of tagsArray(blog.tags) last as isLast">
             <a [routerLink]="['/home/', filter('tag', tag)]">
               {{tag}}
             </a>
