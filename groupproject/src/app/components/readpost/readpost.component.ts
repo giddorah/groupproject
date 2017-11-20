@@ -17,15 +17,16 @@ export class ReadpostComponent implements OnInit {
     
     constructor(private database: DatabaseService, private activatedRoute : ActivatedRoute)
     {
-
+      // This constructor only injects a database and the routings for the project
     }
 
 
   ngOnInit()
   {
+      // The key for the current read-more activated key.
+      this.key = this.activatedRoute.snapshot.params["key"]; // Gets the key from the opened link
 
-      this.key = this.activatedRoute.snapshot.params["key"];
-
+      // Opens the database item with the key gathered from the router above.
       this.blog = this.database.getBlogByKey(this.key).subscribe(b => {
 
           this.blog = b;
@@ -33,12 +34,12 @@ export class ReadpostComponent implements OnInit {
       });
 
 
-      console.log(this.blog);
-      console.log(this.key);
+      // console.log(this.blog);
+      // console.log(this.key);
 
     }
 
-    timeCal(time : number) {
+    timeCal(time : number) { // Functionality to convert the blogpost ms-record to readable date.
       var date = new Date(time);
       var month = "" + (date.getMonth() + 1);
       month.length == 1 ? month = "0" + month : month
@@ -47,11 +48,11 @@ export class ReadpostComponent implements OnInit {
       return date.getFullYear() + "-" + month + "-" + date.getDate();
     }
 
-    filter(filterType, filterCriteria){
+    filter(filterType, filterCriteria){ // Converts the filtering to make clicked filter active
       return filterType + "=" +filterCriteria;
     }
 
-    tagsArray(tags) {
+    tagsArray(tags) { // Gets the current tags
       return this.tagArray = tags;
     }
 }

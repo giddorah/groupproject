@@ -21,7 +21,8 @@ export class HomeComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.key = this.activatedRoute.snapshot.params["key"];
-        this.blogCollections = this.database.getBlogs();
+        this.key = this.activatedRoute.snapshot.params["key"]; // Gets the clicked key from snapshot
+        this.blogCollections = this.database.getBlogs(); // Gets all blog-posts relevant to filter/tags
+    
     }
 }

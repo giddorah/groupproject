@@ -37,6 +37,7 @@ const appRoutes = [
     { path: 'readpost/:key', component: ReadpostComponent }
 ];
 
+// Declarations and imports used through the app
 
 @NgModule({
     declarations: [
