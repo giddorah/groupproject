@@ -1,14 +1,34 @@
 <div class="card card-cascade wider reverse my-4">
   <div class="card-body text-center">
-    <h4 class="card-title"><strong>{{blogs.title}}</strong></h4>
-    <h5 class="grey-text"><strong>{{blogs.tags}}</strong></h5>
-    <p class="card-text">{{blogs.message}}</p>
-    <h5 class="grey-text">{{blogs.name}} - {{timeCal(blogs.time)}}</h5>
-    <a class="icons-sm li-ic"><i class="fa fa-linkedin"> </i></a>
-    <a class="icons-sm tw-ic"><i class="fa fa-twitter"> </i></a>
-    <a class="icons-sm fb-ic"><i class="fa fa-facebook"> </i></a>
-  </div>  
-</div>
-  
-  
+    <h4 class="card-title">
+      <strong>{{blog.title}}</strong>
+    </h4>
+    <h5 class="grey-text centered">
+      <strong>
+        <div class="row">
+          <div *ngFor="let tag of tagsArray(blog.tags) last as isLast">
+            <a [routerLink]="['/home/', filter('tag', tag)]">
+              {{tag}}
+            </a>
+            <span *ngIf=!isLast> {{","}}</span>
+          </div>
+        </div>
+      </strong>
+    </h5>
+    <p class="card-text">{{blog.message}}</p>
+    <h5 class="grey-text">
+      <a [routerLink]="['/home/', filter('name', blog.name)]">{{blog.name}}</a> -
+      <a [routerLink]="['/home/', filter('time', timeCal(blog.time))]">{{timeCal(blog.time)}}</a>
+    </h5>
+    <a class="icons-sm li-ic">
+      <i class="fa fa-linkedin"> </i>
+    </a>
+    <a class="icons-sm tw-ic">
+      <i class="fa fa-twitter"> </i>
+    </a>
+    <a class="icons-sm fb-ic">
+      <i class="fa fa-facebook"> </i>
+    </a>
 
+  </div>
+</div>

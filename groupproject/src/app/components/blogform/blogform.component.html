@@ -10,10 +10,10 @@
             </div>
 
             <div class="md-form">
-                <textarea autocomplete="off" type="text" class="textarea rounded-corners" length="120" mdbCharCounter formControlName="message"
+                <textarea type="text" id="textArea" class="md-textarea" autocomplete="off" mdbActive formControlName="message"
                     style="height:300px">
                 </textarea>
-                <label *ngIf=!TextEnteredInMessage()>Type your message</label>
+                <label for="textArea">Type your message</label>
             </div>
 
             <div class="md-form">

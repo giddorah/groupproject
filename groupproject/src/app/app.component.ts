@@ -7,5 +7,5 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'HEJ OCH VÄLKOMMEN TILL BENGANS FINA APP';
+  title = 'App-Root';
 }
