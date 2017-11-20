@@ -1,32 +1,33 @@
+// Modules and components
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { AdminComponent } from './components/admin/admin.component';
-
-
+import { FooterComponent } from './components/footer/footer.component';
+import { ReadpostComponent } from './components/readpost/readpost.component';
+import { BlogformComponent } from './components/blogform/blogform.component';
+import { BlogpostComponent } from './components/blogpost/blogpost.component';
 import { environment } from './../environments/environment';
+
+// Database modules
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { DatabaseService } from './services/database.service';
 
 // Extern
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import {NgPipesModule } from 'ngx-pipes';
+import { NgPipesModule } from 'ngx-pipes';
 
-// Routes
-import { RouterModule, Routes } from '@angular/router';
 
 // Forms
 import { ReactiveFormsModule } from '@angular/forms';
-import { BlogformComponent } from './components/blogform/blogform.component';
 
-import {  DatabaseService} from './services/database.service';
-import { FooterComponent } from './components/footer/footer.component';
-import { BlogpostComponent } from './components/blogpost/blogpost.component';
-import { ReadpostComponent } from './components/readpost/readpost.component';
+// Routes
+import { RouterModule, Routes } from '@angular/router';
 
 // Our routes
 const appRoutes = [
