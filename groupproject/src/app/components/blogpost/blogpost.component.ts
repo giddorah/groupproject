@@ -90,6 +90,10 @@ export class BlogpostComponent implements OnInit {
       blog.filter(blog => this.timeCal(blog.time) === timeToFilterBy)); // unlike "filterByTag" there will only be one name per post. So no other method needs to be called. 
   }
 
+  filter(filterType, filterCriteria){ // Converts the filtering to make clicked filter active
+    return filterType + "=" +filterCriteria;
+  }
+
   tagsArray(tags) { // in blogpost.component.html the *ngFor loop on row 15, at the time of writting this comment, can't handle the tags-array in the blogs in blogsCollection so this method is called instead to convert into a string-array
     return this.tagArray = tags;
   }

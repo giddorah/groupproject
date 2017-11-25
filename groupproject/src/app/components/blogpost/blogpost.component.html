@@ -3,10 +3,10 @@
         <div class="photo photo1"></div>
         <ul class="details">
             <li class="author">
-                <a (click)=filterByName(blog.name)>{{blog.name}}</a>
+                <a [routerLink]="['/home/', filter('name', blog.name)]" (click)=filterByName(blog.name)>{{blog.name}}</a>
             </li>
             <li class="date">
-                <a (click)=filterByTime(timeCal(blog.time))>{{timeCal(blog.time)}}</a>
+                <a [routerLink]="['/home/', filter('time', timeCal(blog.time))]" (click)=filterByTime(timeCal(blog.time))>{{timeCal(blog.time)}}</a>
             </li>
             <li class="tags">
                 <ul>
@@ -18,7 +18,7 @@
                                 <span *ngIf=isFirst class="mx-2"> </span>
                                 
                                 <span *ngIf=!isFirst> {{","}}</span>
-                                <a (click)=filterByTag(tag)>
+                                <a [routerLink]="['/home/', filter('tag', tag)]" (click)=filterByTag(tag)>
                                     {{tag}}
                                 </a>
                             </div>
